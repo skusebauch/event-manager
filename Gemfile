@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-#postgresql
+# postgresql
 gem 'pg'
+
+# simple-form
+gem 'simple_form'
 
 ruby '2.6.6'
 # for authentication

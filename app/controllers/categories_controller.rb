@@ -2,14 +2,12 @@ class CategoriesController < ApplicationController
   before_action :find_category, only: [ :show, :edit, :update, :destroy ]
   def index
     @categories = Category.all
+    # get form to create category
+    @category = Category.new
   end
 
   def show
     # find_category
-  end
-
-  def new
-    @category = Category.new
   end
 
   def create
