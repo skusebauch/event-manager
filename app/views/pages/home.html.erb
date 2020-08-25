@@ -1,1 +1,7 @@
 <h1>Hello world!</h1>
+<p><%= link_to "login", new_user_session_path %></p>
+<p><%= link_to "sign-up", new_user_registration_path %></p>
+<% if current_user != nil %>
+  <p><%= link_to "log-out", destroy_user_session_path %></p>
+<% end %>
+<p><%= link_to "categories", categories_path %></p>

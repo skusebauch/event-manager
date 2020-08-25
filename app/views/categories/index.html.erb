@@ -1,0 +1,6 @@
+<h1>See all Categories</h1>
+<% @categories.each do |category| %>
+  <p><%= link_to category.name, category_path(category) %></p>
+<% end %>
+
+<p><%= link_to "log-out", destroy_user_session_path %></p>

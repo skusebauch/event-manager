@@ -3,12 +3,15 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
+
   def show
     # find_category
   end
+
   def new
     @category = Category.new
   end
+
   def create
     @category = Category.new(category_params)
     if @category.save
@@ -21,17 +24,20 @@ class CategoriesController < ApplicationController
   def edit
     # find_category
   end
+
   def update
     # find_category
     if @category.update(category_params)
       redirect_to category_path(@category)
     else
       render :edit
+    end
   end
+
   def destroy
     # find_category
     @category.destroy
-    redirect_to category_path
+    redirect_to categories_path
   end
 
   private
@@ -39,6 +45,7 @@ class CategoriesController < ApplicationController
   def find_category
     @category = Category.find(params[:id])
   end
+
   def category_params
     params.require(:category).permit(:name)
   end
