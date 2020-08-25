@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_08_25_160521) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bookings", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_bookings_on_event_id"
@@ -32,10 +35,10 @@ ActiveRecord::Schema.define(version: 2020_08_25_160521) do
     t.text "description"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "category_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.index ["category_id"], name: "index_events_on_category_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
