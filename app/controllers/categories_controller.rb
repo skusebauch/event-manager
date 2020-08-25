@@ -8,15 +8,18 @@ class CategoriesController < ApplicationController
 
   def show
     # find_category
+    @event = Event.new
   end
 
   def create
+    # create category
     @category = Category.new(category_params)
     if @category.save
       redirect_to category_path(@category)
     else
       render :new
     end
+
   end
 
   def edit

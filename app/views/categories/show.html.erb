@@ -1,5 +1,24 @@
-<h1>
-<%= @category.name %>
-</h1>
+<h1><%= @category.name %></h1>
+
+<h2>See all Events</h2>
+<% @category.events.each do |event| %>
+  <p><%= event.name %></p>
+  <p><%= event.description %></p>
+  <p><%= event.start_date %></p>
+  <p><%= event.end_date %></p>
+<% end %>
+
+
+<h2>Add Event</h2>
+
+<%= simple_form_for([@category, @event]) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.datetime_field :start_date %>
+  <%= f.datetime_field :end_date %>
+  <%= f.button :submit %>
+<% end %>
+
+
 
 <p><%= link_to "Zurück", categories_path %></p>
