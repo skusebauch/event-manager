@@ -3,9 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # postgresql
 gem 'pg'
-
+# bootstrap
+gem 'bootstrap', '~> 5.0.0.alpha1'
 # simple-form
 gem 'simple_form'
+
+#autoprefixer
+gem 'autoprefixer-rails'
+# fontawesome
+gem 'font-awesome-sass', '~> 5.6.1'
 
 ruby '2.6.6'
 # for authentication
