@@ -3,8 +3,8 @@
 <h2>See all Events</h2>
 <% @category.events.each do |event| %>
   <p><%= event.name %> |
-  <%= link_to "show", events_path %>
-  <%= link_to "Edit", edit_category_events_path(@category) %> <%=  %></p>
+  <%= link_to "show", event_path(event) %>
+  <%= link_to "Edit", edit_event_path(event) %> <%=  %></p>
   <p><%= event.description %></p>
   <p><%= event.start_date %></p>
   <p><%= event.end_date %></p>
