@@ -16,6 +16,7 @@
   <%= f.input :description %>
   <%= f.datetime_field :start_date %>
   <%= f.datetime_field :end_date %>
+  <p><%= @event.errors.full_messages.first if @event.errors.any? %></p>
   <%= f.button :submit %>
 <% end %>
 

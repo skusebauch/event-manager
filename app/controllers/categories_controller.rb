@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :find_category, only: [ :show, :edit, :update, :destroy ]
+  before_action :find_category, except: [:index, :create]
   def index
     @categories = Category.all
     # get form to create category
@@ -36,6 +36,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     # find_category
+    raise
     @category.destroy
     redirect_to categories_path
   end

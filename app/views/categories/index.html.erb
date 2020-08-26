@@ -1,6 +1,9 @@
 <h1>See all Categories</h1>
 <% @categories.each do |category| %>
-  <p><%= link_to category.name, category_path(category) %></p>
+  <p><%= link_to category.name, category_path(category) %> |
+  <%= link_to "Edit", edit_category_path(category) %>,
+  <%= link_to "Delete", category_path(category), method: :delete,
+  data: { confirm: "Bist du sicher #{category.name} zu löschen?" } %></p>
 <% end %>
 
 <h2>Erstelle einen neuen Kategorie</h2>
