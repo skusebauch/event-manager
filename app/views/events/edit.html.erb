@@ -1,0 +1,10 @@
+<h2>Edit <%= @event.name %></h2>
+
+<%= simple_form_for([@category, @event]) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.datetime_field :start_date %>
+  <%= f.datetime_field :end_date %>
+  <p><%= @event.errors.full_messages.first if @event.errors.any? %></p>
+  <%= f.button :submit %>
+<% end %>
