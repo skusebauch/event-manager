@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :categories do
-    resource :events, only: [ :new, :create, :show ]
+    resource :events, only: [ :new, :create ]
   end
-  resource :events, only: [ :destroy ]
+  resources :events, only: [ :show, :edit, :update, :destroy]
 end
 

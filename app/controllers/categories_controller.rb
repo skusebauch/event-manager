@@ -1,16 +1,14 @@
 class CategoriesController < ApplicationController
-  before_action :find_category, except: [:index, :create]
+  before_action :find_category, except: [:index, :create ]
   def index
     @categories = Category.all
     # get form to create category
     @category = Category.new
   end
-
   def show
-    # find_category
+    @events = Event.all
     @event = Event.new
   end
-
   def create
     @category = Category.new(category_params)
     if @category.save
